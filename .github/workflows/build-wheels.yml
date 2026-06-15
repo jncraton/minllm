@@ -72,4 +72,4 @@ jobs:
           mkdir -p dist
           cp mistral.rs/wheels/**/*.whl dist
           for f in dist/*.whl; do mv -- "$f" "${f//mistralrs/minllm}"; done
-          uv publish
+          uvx twine upload --repository minllm dist/*
